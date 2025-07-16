@@ -1,0 +1,23 @@
+[project]
+name = "filumassm"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "google-genai>=1.25.0",
+    "langchain-google-genai>=2.1.8",
+    "langgraph>=0.5.3",
+    "nest-asyncio>=1.6.0",
+    "pymilvus==2.5.12",
+    "python-dotenv>=1.1.1",
+]
+
+[tool.uv]
+link-mode = "copy"
+
+[dependency-groups]
+dev = [
+    "ruff>=0.12.3",
+    "streamlit>=1.46.1",
+]
