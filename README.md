@@ -1,46 +1,89 @@
-# Setup Instructions
+# Filum Assignment
 
-## Pre-requisites
+A Python-based NLP project with vector database integration using Milvus and Gemini API.
 
-1. Have docker installed for running Milvus Vector DB with ease.
+## 🚀 Quick Start
 
-2. Have [uv](https://docs.astral.sh/uv/) python package manager.
+### Prerequisites
 
-## Steps
+Before getting started, ensure you have the following installed:
 
-1. Create virtual environment with uv and then activate the environment.
+- **Docker** - For running Milvus Vector DB
+- **[uv](https://docs.astral.sh/uv/)** - Python package manager
+
+### Installation
+
+1. **Create and activate virtual environment**
+   ```bash
+   uv venv --python 3.13
+   ```
+
+2. **Activate the environment**
+   
+   **MacOS/Linux:**
+   ```bash
+   source .venv/bin/activate
+   ```
+   
+   **Windows:**
+   ```cmd
+   .venv\Scripts\activate
+   ```
+
+3. **Configure environment variables**
+   
+   Create a `.env` file based on [.env.example](.env.example) and add your API keys:
+   ```bash
+   cp .env.example .env
+   ```
+   > ⚠️ **Important:** Replace placeholder values with your actual Gemini API key
+
+### Running the Application
+
+1. **Start Milvus Vector DB**
+   ```bash
+   docker compose up -d
+   ```
+
+2. **Initialize the database**
+   ```bash
+   python setup.py
+   ```
+
+3. **Run the agent**
+   ```bash
+   python main.py
+   ```
+
+## 🧹 Cleanup
+
+To stop and remove the Milvus vector database:
+```bash
+docker compose down
+```
+
+## 📧 Support
+
+If you encounter any issues during setup, feel free to reach out:
+- **Email:** lequan310.official@gmail.com
+
+## 📁 Project Structure
 
 ```
-uv venv --python 3.13
+FilumAssm/
+├── .github                 # GitHub Actions
+├── agent                   # Agent Implementation
+├── data                    # Example data to upsert into Milvus
+├── .env.example            # Environment variables template
+├── docker-compose.yml      # Milvus database configuration
+├── embedding.py            # Embedding function
+├── main.py                 # Main application entry point
+├── milvus_connector.py     # Milvus class for creating collection, upsert documents, and hybrid search
+├── milvus.yaml             # Milvus file config
+├── setup.py                # Database initialization script
+├── .gitignore              # Gitignore
+├── pyproject.toml          # Dependencies
+├── ruff.toml               # Gitignore
+├── uv.lock                 # uv lock file
+└── README.md               # This file
 ```
-
-2. Activate virtual environment.
-
-For MacOS and Linux:
-```
-source .venv/bin/activate
-```
-
-For Windows:
-```
-.venv\Scripts\activate
-```
-
-3. Setup environment variables by creating .env based on the [.env.example](.env.example). Replace API keys with the actual keys (Gemini API key) to run the code.
-
-4. Run Milvus vector DB
-```
-docker compose up -d
-```
-
-5. Upsert data to vector DB
-```
-python setup.py
-```
-
-6. Run and test the agent
-```
-python main.py
-```
-
-If there are any troubles during the setup of the project, you can contact me via lequan310.official@gmail.com
