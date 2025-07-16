@@ -1,6 +1,4 @@
-# Filum Assignment
-
-A Python-based NLP project with vector database integration using Milvus and Gemini API.
+# Filum Pain Point to Solution Agent
 
 ## 🚀 Quick Start
 
@@ -36,7 +34,7 @@ Before getting started, ensure you have the following installed:
    ```bash
    cp .env.example .env
    ```
-   > ⚠️ **Important:** Replace placeholder values with your actual Gemini API key
+   > ⚠️ **Important:** Replace placeholder values with your actual API key
 
 ### Running the Application
 
