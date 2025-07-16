@@ -47,6 +47,7 @@ Before getting started, ensure you have the following installed:
    ```bash
    python setup.py
    ```
+   > **Note:** You can view your vector database at localhost:8000. If the collection is not loaded or is unloaded, you can load it on the webpage before running the app.
 
 3. **Run the agent**
    ```bash
