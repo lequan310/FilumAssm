@@ -3,7 +3,7 @@ name: CI
 on:
   push:
     branches: ["main"]
-    paths-ignore:
+    paths:
       - "**/*.py"
       - ".github/workflows/ci.yaml"
   pull_request:
